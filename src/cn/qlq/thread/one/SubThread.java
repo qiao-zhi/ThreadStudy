@@ -9,7 +9,7 @@ public class SubThread extends Thread {
 
 	@Override
 	public void run() {
-		log.debug("subThread run,threadname->", Thread.currentThread().getName());
+		log.debug("subThread run,threadname->{}", Thread.currentThread().getName());
 	}
 
 	public static void main(String[] args) {
