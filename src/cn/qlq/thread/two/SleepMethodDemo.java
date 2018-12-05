@@ -27,7 +27,8 @@ public class SleepMethodDemo {
 		};
 		log.debug("begain->{}", System.currentTimeMillis());
 		r1.start();
-		log.debug("end---r1 isAlive->{}", r1.isAlive());
+		Thread.sleep(1 * 1000);
+		log.debug("end---r1 isAlive->{},r1.state->{}", r1.isAlive(), r1.getState());
 		log.debug("end->{}", System.currentTimeMillis());
 	}
 }
