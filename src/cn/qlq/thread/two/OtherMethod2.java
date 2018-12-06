@@ -20,7 +20,7 @@ public class OtherMethod2 {
 		Thread[] ts = new Thread[activeCount];
 		Thread.enumerate(ts);
 		for (Thread t : ts) {
-			System.out.println("从主线程中找到名为my-thread的线程，线程名称为：" + t.getName() + ", 状态为: " + t.getState());
+			System.out.println("从主线程中找到线程名称为：" + t.getName() + ", 状态为: " + t.getState());
 		}
 	}
 }
