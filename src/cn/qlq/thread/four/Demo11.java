@@ -3,8 +3,6 @@ package cn.qlq.thread.four;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sun.swing.internal.plaf.synth.resources.synth;
-
 public class Demo11 extends Thread {
 
 	public static void main(String[] args) throws InterruptedException {
