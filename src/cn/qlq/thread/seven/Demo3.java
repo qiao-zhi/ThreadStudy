@@ -7,13 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 多生产与多消费:操作值-假死( 多生产与多消费保证只有一个元素生产与消费)
+ * 多生产与多消费:操作值
  * 
  * @author Administrator
  *
  */
-public class Demo2 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(Demo2.class);
+public class Demo3 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(Demo3.class);
 
 	public static void main(String[] args) throws InterruptedException {
 		final List<String> list = new ArrayList<String>();
@@ -34,7 +34,7 @@ public class Demo2 {
 							LOGGER.info("list.remove ->{}, threadName->{}", list.get(0),
 									Thread.currentThread().getName());
 							list.remove(0);
-							list.notify();
+							list.notifyAll();
 						}
 					}
 				} catch (InterruptedException e) {
@@ -60,7 +60,7 @@ public class Demo2 {
 							LOGGER.info("list.remove ->{}, threadName->{}", list.get(0),
 									Thread.currentThread().getName());
 							list.remove(0);
-							list.notify();
+							list.notifyAll();
 						}
 					}
 				} catch (InterruptedException e) {
@@ -85,7 +85,7 @@ public class Demo2 {
 							}
 							list.add(i + "");
 							LOGGER.info("添加元素->{},threadName->{}", i, Thread.currentThread().getName());
-							list.notify();
+							list.notifyAll();
 						}
 					}
 				} catch (InterruptedException e) {
@@ -110,7 +110,7 @@ public class Demo2 {
 							}
 							list.add(i + "");
 							LOGGER.info("添加元素->{},threadName->{}", Thread.currentThread().getName());
-							list.notify();
+							list.notifyAll();
 						}
 					}
 				} catch (InterruptedException e) {
