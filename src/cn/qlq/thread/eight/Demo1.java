@@ -7,8 +7,6 @@ import java.io.PipedOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import sun.misc.IOUtils;
-
 /**
  * 通过管道进行线程间通信:字节流
  * 

@@ -3,8 +3,6 @@ package cn.qlq.thread.nine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
-
 /**
  * join(long)释放锁
  * 
