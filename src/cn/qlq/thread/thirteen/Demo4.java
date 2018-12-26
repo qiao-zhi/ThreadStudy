@@ -51,7 +51,7 @@ class Person implements Comparable<Person>{
 	}
 
 	@Override
-	public int compareTo(Person o) {//返回-1表示排在他前面，返回1表示排在他前面
+	public int compareTo(Person o) {//返回-1表示排在他前面，返回1表示排在他后面
 		if(o.getAge() > this.getAge()  ){
 			return 1;
 		}else if(o.getAge() < this.getAge()){
