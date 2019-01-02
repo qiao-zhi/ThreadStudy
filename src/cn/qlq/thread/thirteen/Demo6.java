@@ -57,9 +57,9 @@ class DelayObj implements Delayed {
 	@Override
 	public int compareTo(Delayed o) { // 返回负数表示在前面，返回正数表示在后面
 		if (this.getDelay(TimeUnit.NANOSECONDS) > o.getDelay(TimeUnit.NANOSECONDS)) {// NANOSECONDS是十亿分之秒
-			return 1;
-		} else if (this.getDelay(TimeUnit.NANOSECONDS) < o.getDelay(TimeUnit.NANOSECONDS)) {
 			return -1;
+		} else if (this.getDelay(TimeUnit.NANOSECONDS) < o.getDelay(TimeUnit.NANOSECONDS)) {
+			return 1;
 		}
 		return 0;
 	}
