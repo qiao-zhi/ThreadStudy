@@ -3,13 +3,12 @@ package cn.qlq.thread.sixteeen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
-
 public class Demo2 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Demo2.class);
 
 	public static void main(String[] args) {
+		LOGGER.info("main线程组，名字为:{}", Thread.currentThread().getThreadGroup().getName());
+
 		ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
 		ThreadGroup threadGroup2 = new ThreadGroup(threadGroup, "subMain");
 		new Thread(threadGroup2, new Runnable() {
@@ -17,6 +16,11 @@ public class Demo2 {
 			public void run() {
 				LOGGER.info("threadname ->{},threadGroup ->{}", Thread.currentThread().getName(),
 						Thread.currentThread().getThreadGroup().getName());
+				try {
+					Thread.sleep(2 * 1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}).start();
 
